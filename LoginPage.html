@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login - Amity University Merchandise Store</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F8FF;
+            margin: 0;
+        }
+        .bg-amity-blue { background-color: #000080; }
+        .text-amity-yellow { color: #FFD700; }
+        .container {
+            max-width: 400px;
+            margin: 4rem auto 0 auto;
+            background: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+            padding: 2rem;
+        }
+        h2 {
+            color: #000080;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #000080;
+            font-weight: 600;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+        }
+        .login-btn {
+            width: 100%;
+            background: #000080;
+            color: #FFD700;
+            font-weight: bold;
+            padding: 0.75rem 0;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .login-btn:hover {
+            background: #1e40af;
+        }
+        .login-footer {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        .login-footer a {
+            color: #000080;
+            text-decoration: underline;
+            font-size: 1rem;
+        }
+        .login-footer a:hover {
+            color: #FFD700;
+        }
+        .error-message {
+            color: #e11d48;
+            background: #fff0f3;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="bg-amity-blue p-4 shadow-md" style="padding: 1rem 0;">
+        <div class="container" style="max-width:1200px;display:flex;justify-content:space-between;align-items:center;">
+            <a href="HomePage.html" class="brand" style="color:#FFD700; font-size:2rem; font-weight:bold; text-decoration:none;">Amity Store</a>
+            <div class="navbar-links">
+                <a href="HomePage.html" style="color:#fff; margin-left:1.5rem; text-decoration:none;">Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="container">
+        <h2>Login to Your Account</h2>
+        <div id="error-message" class="error-message"></div>
+        <form id="login-form" autocomplete="off">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required autocomplete="username">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required autocomplete="current-password">
+
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <div class="login-footer">
+            <a href="HomePage.html">&larr; Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+    // Simple demo login (username: user, password: pass)
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const errorDiv = document.getElementById('error-message');
+        if (username === "user" && password === "pass") {
+            errorDiv.style.display = "none";
+            alert("Login successful!");
+            window.location.href = "HomePage.html";
+        } else {
+            errorDiv.textContent = "Invalid username or password.";
+            errorDiv.style.display = "block";
+        }
+    });
+    </script>
+</body>
+</html>
