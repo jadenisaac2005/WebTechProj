@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>About Us - Amity University Merchandise Store</title>
+    <title>Contact Us - Amity University Merchandise Store</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -68,43 +68,61 @@
             margin: 3rem auto 0 auto;
             width: 100%;
         }
-        .about-section {
+        .contact-section {
             background: #fff;
             border-radius: 1rem;
             box-shadow: 0 4px 24px rgba(0,0,0,0.10);
             padding: 2.5rem 2rem;
             margin-bottom: 2rem;
         }
-        .about-section h2 {
+        .contact-section h2 {
             color: #000080;
             font-size: 2rem;
             margin-bottom: 1rem;
         }
-        .about-section p {
+        .contact-section p {
             font-size: 1.15rem;
             color: #22223b;
             margin-bottom: 1.5rem;
             line-height: 1.7;
         }
-        .about-section ul {
-            margin: 1.5rem 0 0 1.5rem;
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #000080;
+            font-weight: 600;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+        }
+        .contact-form textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .contact-btn {
+            width: 100%;
+            background: #000080;
+            color: #FFD700;
+            font-weight: bold;
+            padding: 0.75rem 0;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .contact-btn:hover {
+            background: #1e40af;
+        }
+        .contact-info {
+            margin-top: 2rem;
             color: #000080;
             font-size: 1.08rem;
-        }
-        .about-section li {
-            margin-bottom: 0.5rem;
-        }
-        .about-team {
-            margin-top: 2rem;
-        }
-        .about-team h3 {
-            color: #000080;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        .about-team ul {
-            margin: 0 0 0 1.5rem;
-            color: #22223b;
         }
         .back-link {
             display: block;
@@ -116,6 +134,15 @@
         }
         .back-link:hover {
             color: #FFD700;
+        }
+        .success-message {
+            color: #15803d;
+            background: #f0fdf4;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            display: none;
         }
         footer {
             background: #000080;
@@ -151,31 +178,31 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <h1>About Us</h1>
-            <p>Learn more about the Amity University Merchandise Store project</p>
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you! Reach out with your questions or feedback.</p>
         </div>
     </header>
 
     <main class="container">
-        <section class="about-section">
-            <h2>Our Story</h2>
-            <p>
-                The Amity University Merchandise Store is a student project created as part of the Web Technology course. Our goal is to provide a seamless and enjoyable online shopping experience for Amity students, alumni, and staff to purchase official university merchandise.
-            </p>
-            <h2>What We Offer</h2>
-            <ul>
-                <li>Wide range of official Amity merchandise: accessories, apparel, collectibles, gifts, and home &amp; office items</li>
-                <li>Modern, responsive web design for all devices</li>
-                <li>Easy-to-use shopping cart and checkout experience</li>
-                <li>Simple login for a personalized experience</li>
-            </ul>
-            <div class="about-team">
-                <h3>Project Team</h3>
-                <ul>
-                    <li>Jaden Isaac</li>
-                    <li>Shayan Ponnanna Malchira</li>
-                    <li>Tanush Jaisankar</li>
-                </ul>
+        <section class="contact-section">
+            <h2>Get in Touch</h2>
+            <div id="success-message" class="success-message"></div>
+            <form class="contact-form" id="contact-form" autocomplete="off">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit" class="contact-btn">Send Message</button>
+            </form>
+            <div class="contact-info">
+                <strong>Email:</strong> amity.store@example.com<br>
+                <strong>Phone:</strong> +91-9876543210<br>
+                <strong>Address:</strong> Amity University Bengaluru, Karnataka, India
             </div>
         </section>
     </main>
@@ -186,5 +213,13 @@
             <a href="Contact.html">Contact Us</a>
         </div>
     </footer>
+    <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('success-message').textContent = "Thank you for contacting us! We'll get back to you soon.";
+        document.getElementById('success-message').style.display = "block";
+        this.reset();
+    });
+    </script>
 </body>
 </html>
