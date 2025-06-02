@@ -30,15 +30,11 @@ This is a web-based merchandise store project for Amity University, built as par
 
 ```
 WebTechProj/
-├── HomePage.html
-├── Accessories.html
-├── Apparel.html
-├── Collectibles.html
-├── Gifts.html
-├── Home&Office.html
+├── index.html
+├── Contact.html
 ├── LoginPage.html
 ├── README.md
-└── (other assets: images, scripts, styles if any)
+└── Amity_University_Bengaluru_Logo.jpg
 ```
 
 ## Demo Credentials
